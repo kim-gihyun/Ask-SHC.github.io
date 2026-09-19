@@ -1,6 +1,6 @@
 # Ask SHC
 
-A working English-language RAG chatbot for Shun Hing College and JCSV III, with the supplied SHC logo, responsive student chat, citations, source excerpts, a searchable document library, and administrator uploads.
+A working English-language RAG chatbot for Shun Hing College and JCSV III, with the supplied SHC logo, responsive student chat, citations, source excerpts, a searchable document library, and administrator uploads. The initial knowledge base contains 182 searchable excerpts.
 
 ## Open and use
 
@@ -21,7 +21,7 @@ The collection is bounded, not exhaustive. Private portal pages, inaccessible em
 
 - React UI with Vinext/Vite, deployed as a Cloudflare Worker through Sites.
 - Server-only `OPENROUTER_API_KEY`, `OPENROUTER_MODEL` and `ADMIN_TOKEN`.
-- Exact model: `qwen/qwen3.8-27b:free`. Zero maximum input/output provider pricing. No automatic paid fallback.
+- Models: `qwen/qwen3.8-27b:free` with automatic fallback to `google/gemma-4-31b-it:free` on provider rate limits, unavailability, timeouts and context/output limits. Only these two free models are allowed, with zero maximum input/output pricing. Recently rate-limited models are deprioritized for 90 seconds. Account-wide daily quotas cannot be reset by switching models.
 - Paragraph-aware chunks (~1,700 characters, ~220 overlap), PDF page provenance, BM25 lexical retrieval, a small resident-language synonym map, title/category matching, document diversity and conservative historical downweighting. This implementation does not claim to use vector embeddings.
 - Top six relevant excerpts plus limited conversation history are sent to OpenRouter. Document content is treated as untrusted evidence, never system instructions. Answers are in English and constrained to that evidence.
 - Citation-number validation, no-evidence responses, explicit year checks for fees/admissions, source inspection and rate-limit error states. Citation validation checks references, not factual entailment; staff review remains necessary.
@@ -62,12 +62,13 @@ Review source dates, titles, category changes and historical material after refr
 
 ## Integrating with the official website
 
-This is a private review deployment, not a change to the official SHC website. For public launch, the college needs to approve current content, the public audience and use of OpenRouter, and provide the website editor/deployment access or ask its webmaster to embed the app. The source is portable to a Cloudflare Workers account with D1/R2; other platforms require replacing those storage bindings.
+The app is currently running locally. Online publishing was attempted but blocked because the hosting source endpoint git.chatgpt-team.site does not resolve in DNS. No live hosted deployment was completed, and the official SHC website has not been changed. For public launch, the college needs to approve current content, the public audience and use of OpenRouter, and provide the website editor/deployment access or ask its webmaster to embed the app. The source is portable to a Cloudflare Workers account with D1/R2; other platforms require replacing those storage bindings.
 
 Use the full-page app link or the sample iframe in `embed-example.html` after substituting the approved public app URL. Private Sites sign-in can prevent embedding; do not use the owner-only review URL as the public student deployment. A public launch also needs a deliberate framing/CSP policy for the real college domain and an institutional administrator sign-in plan if a shared admin token is insufficient.
 
 ## Model availability
 
-A live Qwen answer with citations was verified. Subsequent requests returned OpenRouter 429 free-endpoint limits. The app reports this honestly and keeps the retrieved excerpts available; it does not fabricate an answer or silently change models. Free model availability is not a service guarantee. Before launch, assess expected student traffic against the account and provider limits.
+A live Qwen answer with citations was verified. Subsequent requests returned OpenRouter 429 free-endpoint limits. The app reports this honestly and keeps the retrieved excerpts available; it does not fabricate an answer. It automatically tries Gemma 4 31B if Qwen is unavailable, and shows which model answered. Both free endpoints were provider-rate-limited during the latest live test; the account still had 49 of 50 daily requests available. Free model availability is not a service guarantee. Before launch, assess expected student traffic against the account and provider limits.
 
 The key supplied in chat is configured for testing. Replace it before public launch and update both local secret files and hosted environment secrets. Never commit `.env`, `.dev.vars` or administrator tokens.
+

@@ -16,3 +16,12 @@
 - Actual API key and administrator token absent from production build files.
 
 This verifies the implementation and representative flows, not the factual accuracy of every possible model answer. A college content review is still needed before public launch.
+
+## Free-model fallback update
+
+- OpenRouter confirmed 49 of 50 daily free requests remained; the live Qwen error identified the upstream shared provider pool.
+- Both Qwen and Gemma were tried by the updated endpoint; both returned provider HTTP 429.
+- Six isolated fallback tests passed: recovery, shared daily quota, both unavailable, authentication, context limit, and free-only enforcement.
+- The student-committee query with an admissions question in history now retrieves committee/governance sources; unrelated question history is excluded.
+- Hosted publishing is incomplete: the source hosting endpoint returned DNS NXDOMAIN.
+
