@@ -2,7 +2,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {documentFallback} from '../lib/document-fallback.ts';
-import {completeWithFallback,FREE_MODELS} from '../lib/openrouter.ts';
 const docs=JSON.parse(fs.readFileSync(new URL('../data/knowledge.json',import.meta.url),'utf8'));
 test('committee outage fallback quotes real duties and keeps citation aligned',()=>{
  const committee=docs.find(d=>d.title==='Student Committee');
@@ -19,9 +18,4 @@ test('document-only fallback deduplicates documents and limits excerpts',()=>{
  const r=documentFallback('visitor registration',[source,{...source,id:'a-1'},...docs.slice(0,5)]);
  assert.ok(r.sources.length<=3);assert.equal(r.sources.filter(s=>s.documentId==='a').length,1);
  r.excerpts.forEach(e=>assert.ok(r.sources[e.sourceIndex-1]));
-});
-test('both providers in cooldown do not cause repeated failing API requests',async()=>{
- const health=new Map(FREE_MODELS.map(m=>[m,Date.now()+90000]));let calls=0;
- const r=await completeWithFallback('test',[],FREE_MODELS[0],async()=>{calls++;throw Error('must not be called');},health);
- assert.equal(calls,0);assert.equal(r.ok,false);assert.equal(r.code,'providers_busy');
 });

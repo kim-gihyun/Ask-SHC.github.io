@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {completeWithFallback as complete,FREE_MODELS} from '../lib/openrouter.ts';
-const completeWithFallback=(...args)=>complete(...args,new Map());
+import {completeWithFallback,FREE_MODELS} from '../lib/openrouter.ts';
 const messages=[{role:'user',content:'Test question'}];
 const success=model=>Response.json({model,choices:[{message:{content:'Supported answer [1].'},finish_reason:'stop'}]});
 test('falls back after provider rate limit and enforces free pricing',async()=>{
@@ -31,3 +30,39 @@ test('a paid model setting never makes a paid request',async()=>{
  const r=await completeWithFallback('test-key',messages,'paid/model',mock);assert.equal(r.ok,true);assert.ok(FREE_MODELS.includes(called[0]));
 });
 
+test('Gemma as primary switches to Qwen when rate limited',async()=>{
+ const called=[];
+ const mock=async(_u,o)=>{const model=JSON.parse(o.body).model;called.push(model);return called.length===1?Response.json({error:{message:'Provider returned error'}},{status:429}):success(model);};
+ const r=await completeWithFallback('test',messages,FREE_MODELS[1],mock);
+ assert.deepEqual(called,[FREE_MODELS[1],FREE_MODELS[0]]);assert.equal(r.ok,true);assert.equal(r.fallbackUsed,true);
+ assert.deepEqual(r.attempts.map(a=>a.reason),['provider_rate_limit','success']);
+ assert.ok(r.attempts.every(a=>Number.isFinite(Date.parse(a.attemptedAt))));
+});
+
+test('a new question retries both models even immediately after both failed',async()=>{
+ const called=[];
+ const mock=async(_u,o)=>{called.push(JSON.parse(o.body).model);return Response.json({error:{message:'Provider returned error'}},{status:429});};
+ for(let i=0;i<2;i++){
+  const r=await completeWithFallback('test',messages,FREE_MODELS[0],mock);
+  assert.equal(r.ok,false);assert.deepEqual(r.attempts.map(a=>a.model),FREE_MODELS);
+ }
+ assert.deepEqual(called,[...FREE_MODELS,...FREE_MODELS]);
+});
+
+test('an error inside a HTTP 200 response still switches models',async()=>{
+ let calls=0;const mock=async(_u,o)=>++calls===1?Response.json({error:{code:429,message:'Provider returned error'}}):success(JSON.parse(o.body).model);
+ const r=await completeWithFallback('test',messages,FREE_MODELS[0],mock);
+ assert.equal(r.ok,true);assert.equal(calls,2);assert.equal(r.attempts[0].status,429);
+});
+
+test('output token exhaustion switches models',async()=>{
+ let calls=0;const mock=async(_u,o)=>++calls===1?Response.json({choices:[{message:{content:'Truncated'},finish_reason:'length'}]}):success(JSON.parse(o.body).model);
+ const r=await completeWithFallback('test',messages,FREE_MODELS[0],mock);
+ assert.equal(r.ok,true);assert.equal(calls,2);assert.equal(r.attempts[0].reason,'output_limit');
+});
+
+test('successful primary does not unnecessarily request the other model',async()=>{
+ let calls=0;const mock=async(_u,o)=>{calls++;return success(JSON.parse(o.body).model);};
+ const r=await completeWithFallback('test',messages,FREE_MODELS[0],mock);
+ assert.equal(r.ok,true);assert.equal(calls,1);assert.equal(r.fallbackUsed,false);
+});

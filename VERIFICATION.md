@@ -32,3 +32,13 @@ This verifies the implementation and representative flows, not the factual accur
 - Nine tests passed, including verbatim source extraction, citation alignment, document deduplication and cooldown behavior.
 - The exact question "what does the student committee do?" returned HTTP 200 with real Student Committee excerpts, and the result was verified in the browser.
 - Document-only quotations are explicitly distinguished from AI-generated answers.
+
+## Explicit model switching and attempt visibility (19 September 2026)
+
+- Removed the 90-second cooldown skip described in the earlier verification. Each new eligible question gets fresh model attempts.
+- Thirteen tests passed: Qwen to Gemma and Gemma to Qwen failover, repeated questions after both fail, shared quota, auth, context/output limits, error envelopes, success short-circuit, free-only routing and source quotations.
+- TypeScript checking and production build passed.
+- Live browser: the Student Committee question received a cited Qwen answer. A successful primary correctly made only one attempt.
+- Live application helper with Gemma first: Gemma returned 429 at 07:03:42.281 UTC and Qwen returned 429 at 07:03:42.943 UTC.
+- Live browser, visitors question: Qwen returned provider 429 at 15:03:49 Hong Kong time, followed by Gemma provider 429 at 15:03:50. Both appeared in the expanded Model attempts panel, followed by document-only evidence. No browser console errors were recorded.
+- The fallback wiring is verified; Gemma did not successfully generate an answer during this check because its provider rejected the request.
