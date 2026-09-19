@@ -33,7 +33,11 @@ export function retrieve(query:string,docs:Document[],limit=6):Chunk[]{
  terms.forEach(t=>df.set(t,bags.filter(b=>b.includes(t)).length));
  const ranked=chunks.map((c,i)=>{const bag=bags[i];let score=0;let matched=0;
   for(const t of terms){const tf=bag.filter(w=>w===t).length;if(tf){matched++;score+=Math.log(1+(chunks.length-(df.get(t)||0)+.5)/((df.get(t)||0)+.5))*tf*2.2/(tf+1.2*(.25+.75*bag.length/avg));}}
-  score*=.5+.5*matched/terms.length;if(c.historical&&!/20\d\d/.test(query))score*=.75;
+  score*=.5+.5*matched/terms.length;
+  const normalizedQuery=query.toLowerCase().replace(/[^a-z0-9]+/g,' ');
+  const normalizedTitle=c.title.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+  if(normalizedTitle.length>5&&normalizedQuery.includes(normalizedTitle))score+=8;
+  if(c.historical&&!/20\d\d/.test(query))score*=.75;
   if(/lap.chee.*rule|chi sun.*rule|new college.*rule/i.test(c.title))score=0;
   return {...c,score};}).filter(c=>c.score>1.5).sort((a,b)=>b.score-a.score);
  const counts=new Map<string,number>();return ranked.filter(c=>{const n=counts.get(c.documentId)||0;if(n>=2)return false;counts.set(c.documentId,n+1);return true;}).slice(0,limit);

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {completeWithFallback,FREE_MODELS} from '../lib/openrouter.ts';
+import {completeWithFallback as complete,FREE_MODELS} from '../lib/openrouter.ts';
+const completeWithFallback=(...args)=>complete(...args,new Map());
 const messages=[{role:'user',content:'Test question'}];
 const success=model=>Response.json({model,choices:[{message:{content:'Supported answer [1].'},finish_reason:'stop'}]});
 test('falls back after provider rate limit and enforces free pricing',async()=>{
@@ -29,3 +30,4 @@ test('a paid model setting never makes a paid request',async()=>{
  const called=[];const mock=async(_u,o)=>{const m=JSON.parse(o.body).model;called.push(m);return success(m);};
  const r=await completeWithFallback('test-key',messages,'paid/model',mock);assert.equal(r.ok,true);assert.ok(FREE_MODELS.includes(called[0]));
 });
+

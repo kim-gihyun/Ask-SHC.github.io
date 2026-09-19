@@ -5,11 +5,12 @@ type Attempt={model:string;status:number;reason:string};
 export type CompletionResult={ok:true;answer:string;model:string;attempts:Attempt[];fallbackUsed:boolean}|{ok:false;error:string;code:string;status:number;attempts:Attempt[]};
 // Provider health only: no user text, tokens or account information is cached here.
 const cooldown=new Map<string,number>();
-export async function completeWithFallback(key:string,messages:ChatMessage[],preferred:string=FREE_MODELS[0],request:typeof fetch=fetch):Promise<CompletionResult>{
+export async function completeWithFallback(key:string,messages:ChatMessage[],preferred:string=FREE_MODELS[0],request:typeof fetch=fetch,providerCooldown:Map<string,number>=cooldown):Promise<CompletionResult>{
  const primary=FREE_MODELS.includes(preferred as typeof FREE_MODELS[number])?preferred:FREE_MODELS[0];
  const ordered=[primary,...FREE_MODELS.filter(m=>m!==primary)];
- const available=ordered.filter(m=>(cooldown.get(m)||0)<Date.now());
- const models=[...available,...ordered.filter(m=>!available.includes(m))];const attempts:Attempt[]=[];
+ const available=ordered.filter(m=>(providerCooldown.get(m)||0)<Date.now());
+ if(!available.length)return {ok:false,error:'Both free providers are cooling down after rate limits. Document search remains available.',code:'providers_busy',status:429,attempts:[]};
+ const models=available;const attempts:Attempt[]=[];
  for(const model of models){
   try{
    const response=await request('https://openrouter.ai/api/v1/chat/completions',{
@@ -21,7 +22,7 @@ export async function completeWithFallback(key:string,messages:ChatMessage[],pre
    if(response.ok&&!data.error){
     const answer=data.choices?.[0]?.message?.content;
     if(typeof answer==='string'&&answer.trim()&&data.choices?.[0]?.finish_reason!=='length'){
-     attempts.push({model,status:response.status,reason:'success'});cooldown.delete(model);
+     attempts.push({model,status:response.status,reason:'success'});providerCooldown.delete(model);
      return {ok:true,answer,model:data.model||model,attempts,fallbackUsed:model!==primary};
     }
     attempts.push({model,status:502,reason:data.choices?.[0]?.finish_reason==='length'?'output_limit':'empty_answer'});continue;
@@ -33,10 +34,11 @@ export async function completeWithFallback(key:string,messages:ChatMessage[],pre
    const contextLimit=response.status===400&&/context|token|maximum.*length/.test(detail);
    const canFallback=response.status===429||response.status>=500||[404,408].includes(response.status)||contextLimit;
    attempts.push({model,status:response.status,reason:response.status===429?'provider_rate_limit':contextLimit?'context_limit':'provider_unavailable'});
-   if(canFallback){cooldown.set(model,Date.now()+90000);continue;}
+   if(canFallback){providerCooldown.set(model,Date.now()+90000);continue;}
    return {ok:false,error:'OpenRouter could not accept this request. Please shorten the question or ask an administrator to check the model settings.',code:'request_rejected',status:502,attempts};
-  }catch{attempts.push({model,status:504,reason:'timeout_or_network'});cooldown.set(model,Date.now()+90000);}
+  }catch{attempts.push({model,status:504,reason:'timeout_or_network'});providerCooldown.set(model,Date.now()+90000);}
  }
  const rateLimited=attempts.some(a=>a.status===429);
  return {ok:false,error:rateLimited?'Both free models are currently unavailable or rate-limited by their providers. Qwen and Gemma were both tried. Please try again shortly; you can still read the matching source excerpts.':'Neither free model could complete the answer just now. Please try again shortly; the matching source excerpts are still available.',code:rateLimited?'providers_busy':'providers_unavailable',status:rateLimited?429:503,attempts};
 }
+

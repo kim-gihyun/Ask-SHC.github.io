@@ -25,3 +25,10 @@ This verifies the implementation and representative flows, not the factual accur
 - The student-committee query with an admissions question in history now retrieves committee/governance sources; unrelated question history is excluded.
 - Hosted publishing is incomplete: the source hosting endpoint returned DNS NXDOMAIN.
 
+
+## Document-only resilience fix
+
+- Minimal direct requests to both permitted models still returned upstream shared-pool HTTP 429, confirming an external capacity limit.
+- Nine tests passed, including verbatim source extraction, citation alignment, document deduplication and cooldown behavior.
+- The exact question "what does the student committee do?" returned HTTP 200 with real Student Committee excerpts, and the result was verified in the browser.
+- Document-only quotations are explicitly distinguished from AI-generated answers.

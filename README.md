@@ -72,3 +72,7 @@ A live Qwen answer with citations was verified. Subsequent requests returned Ope
 
 The key supplied in chat is configured for testing. Replace it before public launch and update both local secret files and hosted environment secrets. Never commit `.env`, `.dev.vars` or administrator tokens.
 
+
+## Provider-outage behavior
+
+When the selected free providers are unavailable, the app returns HTTP 200 with explicitly labelled Document-only mode: verbatim passages from the retrieved sources and aligned citations. It does not pretend that a model generated an answer. Exact document titles are prioritized for matching questions. Both providers are given a 90-second cooldown after capacity failures, so repeated questions continue to retrieve documents without repeatedly hitting unavailable endpoints. AI generation is attempted again automatically after cooldown. Nine fallback and extractive-evidence tests pass; the exact Student Committee question was verified in the browser.
