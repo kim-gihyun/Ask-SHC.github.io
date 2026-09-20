@@ -1,4 +1,4 @@
-import requests, json, re, hashlib, time, io, concurrent.futures
+import requests, json, re, hashlib, time, io, concurrent.futures, sys
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, urldefrag
 from pathlib import Path
@@ -45,6 +45,17 @@ def fetch(u):
   historic=bool(re.search(r'201[0-9]|202[0-4]|2025[-_/]26|2025-2026',title+' '+u))
   return {'id':ident,'title':title.split(' | ')[0].split(' – Jockey')[0], 'url':u,'organization':'SHC' if 'shunhing' in u else 'JCSV III','category':category,'kind':'PDF' if pdf else 'Web page','retrievedAt':time.strftime('%Y-%m-%d'),'updatedLabel':dates[-1] if dates else None,'historical':historic,'text':body,'pages':pages,'hash':digest},links,None
  except Exception as e:return None,[],{'url':u,'error':str(e)[:180]}
+
+if '--refresh-url' in sys.argv:
+ url=normal(sys.argv[sys.argv.index('--refresh-url')+1])
+ if not allowed(url):raise SystemExit('Only official SHC/JCSV III pages may be refreshed.')
+ doc,links,error=fetch(url)
+ if error:raise SystemExit(json.dumps(error))
+ current=json.loads((OUT/'knowledge.json').read_text(encoding='utf-8'))
+ current=[d for d in current if d['url']!=doc['url']]+[doc]
+ (OUT/'knowledge.json').write_text(json.dumps(current,ensure_ascii=False,indent=2),encoding='utf-8')
+ print(json.dumps({'refreshed':doc['url'],'characters':len(doc['text']),'documents':len(current)}))
+ raise SystemExit(0)
 
 queue=SEEDS
 for depth in range(3):

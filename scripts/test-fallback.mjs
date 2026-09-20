@@ -13,9 +13,34 @@ test('account daily quota does not waste another request',async()=>{
  let calls=0;const mock=async()=>{calls++;return Response.json({error:{message:'Rate limit exceeded: free-models-per-day'}},{status:429});};
  const r=await completeWithFallback('test-key',messages,FREE_MODELS[0],mock);assert.equal(r.ok,false);assert.equal(r.code,'daily_quota');assert.equal(calls,1);
 });
-test('tries both models, then reports unavailability',async()=>{
+test('tries all 21 models, then reports unavailability',async()=>{
  const called=[];const mock=async(_u,o)=>{called.push(JSON.parse(o.body).model);return Response.json({error:{message:'Provider returned error'}},{status:429});};
- const r=await completeWithFallback('test-key',messages,FREE_MODELS[0],mock);assert.equal(r.ok,false);assert.equal(r.code,'providers_busy');assert.equal(new Set(called).size,2);
+ const r=await completeWithFallback('test-key',messages,FREE_MODELS[0],mock);assert.equal(r.ok,false);assert.equal(r.code,'providers_busy');assert.equal(new Set(called).size,FREE_MODELS.length);
+});
+
+test('reaches the last model and emits every attempt in order',async()=>{
+ const called=[];const progress=[];
+ const mock=async(_u,o)=>{const body=JSON.parse(o.body);called.push(body.model);assert.equal(body.provider.max_price.completion,0);return called.length<FREE_MODELS.length?Response.json({error:{message:'Provider busy'}},{status:429}):success(body.model);};
+ const r=await completeWithFallback('test',messages,FREE_MODELS[0],mock,{onAttempt:a=>progress.push(a)});
+ assert.equal(FREE_MODELS.length,21);assert.equal(r.ok,true);assert.deepEqual(called,FREE_MODELS);assert.deepEqual(progress,r.attempts);assert.equal(r.model,FREE_MODELS.at(-1));
+});
+
+test('an answer without valid citations falls through to another model',async()=>{
+ let calls=0;const mock=async(_u,o)=>++calls===1?Response.json({choices:[{message:{content:'Unsupported response'},finish_reason:'stop'}]}):success(JSON.parse(o.body).model);
+ const r=await completeWithFallback('test',messages,FREE_MODELS[0],mock,{validateAnswer:a=>a.includes('[1]')});
+ assert.equal(r.ok,true);assert.equal(calls,2);assert.equal(r.attempts[0].reason,'invalid_citations');
+});
+
+test('mandatory reasoning model is not sent a disable-reasoning parameter',async()=>{
+ const model=FREE_MODELS.find(m=>m.startsWith('liquid/'));
+ const mock=async(_u,o)=>{const body=JSON.parse(o.body);assert.equal(body.reasoning.enabled,true);return success(body.model);};
+ const r=await completeWithFallback('test',messages,model,mock);assert.equal(r.ok,true);
+});
+
+test('cancelled requests do not continue to new providers',async()=>{
+ const controller=new AbortController();let calls=0;
+ const mock=async()=>{calls++;controller.abort();throw Error('cancelled');};
+ await assert.rejects(completeWithFallback('test',messages,FREE_MODELS[0],mock,{signal:controller.signal}));assert.equal(calls,1);
 });
 test('authentication errors do not retry',async()=>{
  let calls=0;const mock=async()=>{calls++;return Response.json({error:{message:'Invalid key'}},{status:401});};

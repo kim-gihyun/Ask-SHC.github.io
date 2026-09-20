@@ -3,7 +3,7 @@ import { extractText,getDocumentProxy } from 'unpdf';
 import { database } from '../../../lib/knowledge';
 import { admin,sameOrigin } from '../../../lib/server';
 export async function POST(request:Request){
- if(!sameOrigin(request)||!await admin(request))return Response.json({error:'Enter a valid administrator access token.'},{status:401});
+ if(!sameOrigin(request)||!await admin(request))return Response.json({error:'Administrator sign-in required.'},{status:401});
  try{
   if(Number(request.headers.get('content-length')||0)>6*1024*1024)return Response.json({error:'Maximum file size is 5 MB.'},{status:413});
   const form=await request.formData();const file=form.get('file');const title=String(form.get('title')||'').trim().slice(0,160);

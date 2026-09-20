@@ -19,3 +19,10 @@ test('document-only fallback deduplicates documents and limits excerpts',()=>{
  assert.ok(r.sources.length<=3);assert.equal(r.sources.filter(s=>s.documentId==='a').length,1);
  r.excerpts.forEach(e=>assert.ok(r.sources[e.sourceIndex-1]));
 });
+
+test('an EMT comparison retains evidence for both groups',()=>{
+ const sources=['Student Committee','Event Management Team'].map(title=>docs.find(d=>d.title===title));
+ const r=documentFallback('what does the student committee do? what about emt? how are the two different?',sources);
+ assert.deepEqual(r.sources.map(s=>s.title),['Student Committee','Event Management Team']);
+ assert.ok(r.excerpts[1].text.includes('organising college events'));
+});

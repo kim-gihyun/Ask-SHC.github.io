@@ -2,6 +2,10 @@
 
 Collected: 19 September 2026. Sources: official shunhingcollege.hku.hk and jockeyv3.hku.hk websites only.
 
+Tutorial Team refreshed: 20 September 2026. The page includes Prof. David S. Lee (College Master), 11 tutors covering floors 5–28, and two junior resident fellows without listed floors. Retrieval now preserves their names, roles, floors and emails in one directory excerpt, and retains single-digit floor numbers. This page was already collected; earlier misses were due to query tokenisation and chunk selection.
+
+Supplementary-material browsing, downloads and editing now require sign-in at `/admin`. Relevant facts and excerpts still support student answers. Uploads and edits enter retrieval immediately.
+
 Collected 72 distinct documents: 54 SHC and 18 JCSV III; 9 PDFs and 63 web pages. The crawler visited 93 URLs across three passes with no fetch failures. Duplicate content was removed. This is a bounded collection, not a claim of exhaustive coverage.
 
 ## Coverage
@@ -27,7 +31,7 @@ Collected 72 distinct documents: 54 SHC and 18 JCSV III; 9 PDFs and 63 web pages
 
 - Retrieval date is not the publication or effective date. Historical/date-sensitive markers are conservative metadata hints, not proof that a rule has expired.
 - Some source pages contain old dates or conflicting versions. AI is instructed to identify the year and conflicts. A college administrator should validate current rules before public launch.
-- Embedded Google Drive documents, HKU Portal pages, Google Forms, external link trees, calendars and scanned/image-only content are not automatically ingested. Add approved readable PDFs or text through Manage documents.
+- Embedded Google Drive documents, HKU Portal pages, Google Forms, external link trees, calendars and scanned/image-only content are not automatically ingested. Add approved readable PDFs or text through the administrator page.
 - No automated refresh is scheduled. Run scripts/collect.py to recollect the official websites, review changes, rebuild and deploy. Administrator uploads are immediately indexed.
 - Table text is extracted in reading order. Always consult the original PDF for complex fee tables and diagrams.
 - Original PDF downloads are in data/originals; extracted text, provenance and PDF page numbers are in data/knowledge.json.

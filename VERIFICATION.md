@@ -42,3 +42,13 @@ This verifies the implementation and representative flows, not the factual accur
 - Live application helper with Gemma first: Gemma returned 429 at 07:03:42.281 UTC and Qwen returned 429 at 07:03:42.943 UTC.
 - Live browser, visitors question: Qwen returned provider 429 at 15:03:49 Hong Kong time, followed by Gemma provider 429 at 15:03:50. Both appeared in the expanded Model attempts panel, followed by document-only evidence. No browser console errors were recorded.
 - The fallback wiring is verified; Gemma did not successfully generate an answer during this check because its provider rejected the request.
+
+## Staff retrieval, admin privacy and uploads (20 September 2026)
+
+- Refreshed the official Tutorial Team page. The existing collection already contained its names and assignments, but retrieval dropped single-digit numbers and limited page chunks. The directory now preserves all 14 people together; 24 floor assignments (5–28) are individually tested.
+- Sixty automated tests passed, covering staff/floor lookups, current versus founding master, missing facts, eleven topic coverage queries, uploaded/edited evidence, sessions, model fallback and stream parsing. TypeScript and production build passed.
+- Anonymous library listing, original-file download, editor access, upload, editing and deletion returned 401. Cross-origin mutation was rejected. Correct password creates an HttpOnly/SameSite cookie; wrong password is rejected; logout clears the cookie.
+- Live upload → edit → download returned matching revised text. Anonymous download was denied. The public chatbot used the revised booking code with a valid citation and did not expose the uploaded-file URL.
+- That live answer recovered from Qwen 429 and Gemma 429 using Ling Flash VL (200). The disposable test source was removed afterward.
+- Browser: student navigation contains no library/management controls; a complete master/tutor/fellow answer was displayed with citations. The separate admin URL showed a password screen without document metadata. No errors were recorded on the admin login page.
+- These checks verify representative retrieval and access boundaries, not universal factual accuracy. Uploaded content is intended to inform public student answers even though library management and full downloads are private.

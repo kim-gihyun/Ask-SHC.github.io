@@ -4,13 +4,14 @@ const ignored=new Set('what who where when how why does do is are the a an of fo
 const words=(s:string)=>(s.toLowerCase().match(/[a-z0-9]+/g)||[]).filter(w=>!ignored.has(w));
 export function documentFallback<T extends Evidence>(query:string,sources:T[]){
  const terms=new Set(words(query));
- const normalized=query.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
- const exact=sources.find(s=>{const title=s.title.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();return title.length>5&&normalized.includes(title);});
- const chosen=exact?[exact]:sources.filter((s,i,a)=>a.findIndex(t=>(t.documentId||t.id)===(s.documentId||s.id))===i).slice(0,3);
+ const normalized=query.toLowerCase().replace(/\bemt\b/g,'event management team').replace(/\bsc\b/g,'student committee').replace(/[^a-z0-9]+/g,' ').trim();
+ const unique=sources.filter((s,i,a)=>a.findIndex(t=>(t.documentId||t.id)===(s.documentId||s.id))===i);
+ const exact=unique.filter(s=>{const title=s.title.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();return title.length>5&&normalized.includes(title);});
+ const chosen=(exact.length?exact:unique).slice(0,3);
  const excerpts:QuotedExcerpt[]=chosen.map((s,index)=>{
   const lines=s.text.split(/\n+/).map(l=>l.trim()).filter(l=>l.length>55);
   let passage='';
-  if(exact&&lines.length){passage=lines.slice(0,3).join('\n\n');}
+  if(exact.length&&lines.length){passage=lines.slice(0,3).join('\n\n');}
   else{
    const sentences=s.text.replace(/\s+/g,' ').match(/[^.!?]+[.!?]+(?:\s|$)|[^.!?]+$/g)||[s.text];
    const windows=sentences.map((sentence,i)=>{const text=sentence+(sentences[i+1]||'');const tokens=new Set(words(text));return {text:text.trim(),score:[...terms].filter(w=>tokens.has(w)).length};});
