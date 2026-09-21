@@ -1,0 +1,15 @@
+{
+  "liveQuestions": 40,
+  "http200": 40,
+  "answerModes": {
+    "answer": 36,
+    "no-evidence": 2,
+    "clarification": 2
+  },
+  "medianMs": 3552,
+  "p95Ms": 7314,
+  "burstStatuses": {
+    "200": 6,
+    "429": 6
+  }
+}

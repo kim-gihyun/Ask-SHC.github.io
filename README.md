@@ -86,3 +86,14 @@ When the selected free providers are unavailable, the app returns HTTP 200 with 
 Each question attempts the configured primary model, then the remaining free models in order. Previous failures do not silently skip models. Each model has a 12-second timeout; the first valid answer stops the sequence. Shared account daily quotas, authentication and account restrictions stop immediately. The local eight-questions-per-minute limit still applies.
 
 The chat displays an ordered Model attempts panel with model names, results and timestamps. It expands automatically for fallback and document-only responses. Server logs contain only these diagnostic fields, not keys or questions. Token usage does not demonstrate whether a rejected request was attempted. See `VERIFICATION.md` for automated and live checks.
+
+## Conversation context (2026-09-20)
+The chat sends up to 12 recent messages, bounded to 12 KB of serialized history. Short corrections and follow-ups retain earlier user topics for retrieval; the model receives recent turns to resolve intent. Independent questions search their own topic. Prior assistant responses are not evidence, and citations must refer to newly retrieved sources. History stays in the current page session: New conversation or a page refresh clears it. No permanent chat memory is stored.
+
+## Persistent chats and branding (2026-09-20)
+Supersedes the temporary-memory note above: full conversation transcripts and source cards now persist in this browser's local storage and restore after reload. New conversation archives the current chat; use Saved conversations to resume it. Chats are browser-local, not synchronized between devices, and clearing site data removes them. Storage failures display a visible warning. Model requests remain bounded: recent turns plus relevant older user questions are selected from the complete saved chat, rather than sending unlimited history. This improves continuity but is not a guarantee of unlimited model recall.
+
+The supplied HKU crest appears in the sidebar footer; the SHC logo is a low-opacity decorative watermark behind the chat.
+
+### Latest collection audit: 2026-09-21
+The collection now contains 77 documents after refreshing 81 URLs, including official homepage navigation and existing sources, with zero fetch failures. The Resident Student Ambassador wording now retrieves the official Residential Student Adviser Team page and clarifies the official name. All 26 SHC team/club pages have retrieval regression checks. Detailed scope and URLs are recorded in data/coverage-audit.json; archive-only, external and image-only content are not certified complete.

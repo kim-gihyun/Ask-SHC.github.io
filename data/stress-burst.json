@@ -1,0 +1,74 @@
+[
+  {
+    "status": 200,
+    "ms": 307,
+    "answer": "I couldn’t find supporting information in the college documents. Please try a more specific question, or contact the college office for confirmation.",
+    "sources": [],
+    "mode": "no-evidence"
+  },
+  {
+    "status": 200,
+    "ms": 306,
+    "answer": "I couldn’t find supporting information in the college documents. Please try a more specific question, or contact the college office for confirmation.",
+    "sources": [],
+    "mode": "no-evidence"
+  },
+  {
+    "status": 200,
+    "ms": 305,
+    "answer": "I couldn’t find supporting information in the college documents. Please try a more specific question, or contact the college office for confirmation.",
+    "sources": [],
+    "mode": "no-evidence"
+  },
+  {
+    "status": 200,
+    "ms": 306,
+    "answer": "I couldn’t find supporting information in the college documents. Please try a more specific question, or contact the college office for confirmation.",
+    "sources": [],
+    "mode": "no-evidence"
+  },
+  {
+    "status": 429,
+    "ms": 306,
+    "error": "Please wait a minute before asking another question."
+  },
+  {
+    "status": 200,
+    "ms": 305,
+    "answer": "I couldn’t find supporting information in the college documents. Please try a more specific question, or contact the college office for confirmation.",
+    "sources": [],
+    "mode": "no-evidence"
+  },
+  {
+    "status": 429,
+    "ms": 305,
+    "error": "Please wait a minute before asking another question."
+  },
+  {
+    "status": 429,
+    "ms": 310,
+    "error": "Please wait a minute before asking another question."
+  },
+  {
+    "status": 429,
+    "ms": 305,
+    "error": "Please wait a minute before asking another question."
+  },
+  {
+    "status": 200,
+    "ms": 302,
+    "answer": "I couldn’t find supporting information in the college documents. Please try a more specific question, or contact the college office for confirmation.",
+    "sources": [],
+    "mode": "no-evidence"
+  },
+  {
+    "status": 429,
+    "ms": 307,
+    "error": "Please wait a minute before asking another question."
+  },
+  {
+    "status": 429,
+    "ms": 310,
+    "error": "Please wait a minute before asking another question."
+  }
+]

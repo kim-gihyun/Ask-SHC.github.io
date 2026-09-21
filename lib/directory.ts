@@ -32,6 +32,7 @@ export function directoryAnswer(query:string,docs:Document[]){
  const nameMatch=records.filter(r=>q.includes(r.name.replace(/^(Prof\.|Dr\.|Mr\.|Ms\.) /,'').toLowerCase()));
  const staffIntent=/\btutors?\b|tutorial team|resident fellows?|college master|master of|shc.*master|master.*shc/.test(q)||nameMatch.length>0;
  if(!staffIntent)return null;
+ if(/\b(?:age|birthday|married|family|favourite|favorite|nationality|private)\b|home address/.test(q))return null;
  // Uploaded staffing notices can change the answer or introduce conflicting dates.
  // Let RAG compare those notices rather than bypassing them with a seed-only lookup.
  if(docs.some(d=>d.organization==='Uploaded'&&/tutorial team|resident tutor|college master/i.test(d.title+' '+d.text)))return null;
@@ -40,7 +41,7 @@ export function directoryAnswer(query:string,docs:Document[]){
  if(!floors.length&&!wantsList&&!wantsMaster&&!nameMatch.length&&!/who|email|contact/.test(q))return null;
  if(/my (?:floor )?tutor/.test(q)&&!floors.length)return {answer:'Which floor do you live on? I can look up its tutor in the SHC tutorial-team directory.',sources:[source],mode:'directory'};
  let selected:Staff[]=[];
- if(floors.length)selected=records.filter(r=>r.floors.some(f=>floors.includes(f)));
+ if(floors.length)selected=records.filter(r=>(wantsMaster&&r.role==='College Master')||r.floors.some(f=>floors.includes(f)));
  else if(wantsMaster&&!wantsList)selected=records.filter(r=>r.role==='College Master');
  else if(nameMatch.length&&!wantsList)selected=nameMatch;
  else if(wantsList)selected=records.filter(r=>/tutorial team/.test(q)||wantsMaster||(/fellows?/.test(q)?/Fellow/.test(r.role):/Tutor/.test(r.role)));

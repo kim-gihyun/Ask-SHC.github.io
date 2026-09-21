@@ -1,0 +1,1110 @@
+[
+  {
+    "question": "Tell me about SHC",
+    "title": "About",
+    "pass": true,
+    "titles": [
+      "About",
+      "About"
+    ],
+    "ms": 2.548000000000002
+  },
+  {
+    "question": "What is JCSVIII?",
+    "title": "Jockey",
+    "pass": true,
+    "titles": [
+      "Jockey Club Student Village III – The University of Hong Kong"
+    ],
+    "ms": 0.4047000000000054
+  },
+  {
+    "question": "What is JCSV3?",
+    "title": "Jockey",
+    "pass": true,
+    "titles": [
+      "Jockey Club Student Village III – The University of Hong Kong"
+    ],
+    "ms": 0.1477999999999895
+  },
+  {
+    "question": "Who is my tutor?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.7592999999999961
+  },
+  {
+    "question": "Who is the warden of SHC?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team",
+      "Tutorial Team",
+      "Tutorial Team"
+    ],
+    "ms": 19.393599999999992
+  },
+  {
+    "question": "Who is the master of SHC?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.33440000000000225
+  },
+  {
+    "question": "What do resident student ambassadors do?",
+    "title": "Residential Student Adviser",
+    "pass": true,
+    "titles": [
+      "Residential Student Adviser Team",
+      "Admissions",
+      "Organizational Structure"
+    ],
+    "ms": 10.649100000000004
+  },
+  {
+    "question": "What does RSA do?",
+    "title": "Residential Student Adviser",
+    "pass": true,
+    "titles": [
+      "Residential Student Adviser Team",
+      "Admissions",
+      "Organizational Structure"
+    ],
+    "ms": 10.948999999999998
+  },
+  {
+    "question": "How can I join EMT?",
+    "title": "Event Management",
+    "pass": true,
+    "titles": [
+      "Event Management Team",
+      "Joint-college Dance Team",
+      "10th JCSV III International Music Festival"
+    ],
+    "ms": 10.9606
+  },
+  {
+    "question": "What does SC do?",
+    "title": "Student Committee",
+    "pass": true,
+    "titles": [
+      "Student Committee",
+      "Student Committee",
+      "Organizational Structure"
+    ],
+    "ms": 9.359200000000001
+  },
+  {
+    "question": "Where can I wash my clothes?",
+    "title": "FAQ",
+    "pass": true,
+    "titles": [
+      "Important Check-in Notes",
+      "FAQs",
+      "Other Charges and Fines"
+    ],
+    "ms": 9.140999999999991
+  },
+  {
+    "question": "Can my friend stay overnight?",
+    "title": "Rules",
+    "pass": true,
+    "titles": [
+      "FAQs",
+      "FAQs",
+      "Management Rules of Jockey Club Student Village III"
+    ],
+    "ms": 14.643499999999989
+  },
+  {
+    "question": "Can visitors enter my room?",
+    "title": "Rules",
+    "pass": true,
+    "titles": [
+      "Management Rules of Jockey Club Student Village III",
+      "Regulations Governing Residential Colleges",
+      "Management Rules of Jockey Club Student Village III"
+    ],
+    "ms": 12.486700000000013
+  },
+  {
+    "question": "Can I smoke in the college?",
+    "title": "Remind",
+    "pass": true,
+    "titles": [
+      "Warm Reminder for Residents",
+      "IMPORTANT REMINDERS from Shun Hing College"
+    ],
+    "ms": 11.4084
+  },
+  {
+    "question": "Can I keep a cat?",
+    "title": "Rules",
+    "pass": true,
+    "titles": [
+      "Regulations Governing Residential Colleges",
+      "Management Rules of Jockey Club Student Village III",
+      "Regulations Governing Residential Colleges"
+    ],
+    "ms": 14.230999999999995
+  },
+  {
+    "question": "Can I cook in my bedroom?",
+    "title": "Remind",
+    "pass": true,
+    "titles": [
+      "Warm Reminder for Residents",
+      "Important Check-in Notes",
+      "Cooking Club"
+    ],
+    "ms": 9.681999999999988
+  },
+  {
+    "question": "What if I lose my key card?",
+    "title": "FAQ",
+    "pass": true,
+    "titles": [
+      "Management Rules of Jockey Club Student Village III",
+      "Warm Reminder for Residents",
+      "management rules of jcsviii 2021"
+    ],
+    "ms": 10.252199999999988
+  },
+  {
+    "question": "How do I collect a parcel?",
+    "title": "FAQ",
+    "pass": true,
+    "titles": [
+      "Warm Reminder for Residents",
+      "Important Check-in Notes",
+      "FAQs"
+    ],
+    "ms": 9.849500000000006
+  },
+  {
+    "question": "Where can I exercise?",
+    "title": "Facilities",
+    "pass": true,
+    "titles": [
+      "Facilities",
+      "Facilities",
+      "Facilities"
+    ],
+    "ms": 9.255600000000015
+  },
+  {
+    "question": "How do I connect to Wi-Fi?",
+    "title": "FAQ",
+    "pass": true,
+    "titles": [
+      "FAQs",
+      "Important Check-in Notes",
+      "Facilities"
+    ],
+    "ms": 9.783199999999994
+  },
+  {
+    "question": "When are quiet hours?",
+    "title": "Rules",
+    "pass": true,
+    "titles": [
+      "Management Rules of Jockey Club Student Village III",
+      "management rules of jcsviii 2021",
+      "20190805 Shun Hing College General Floor Rules"
+    ],
+    "ms": 9.798500000000018
+  },
+  {
+    "question": "Can I bring a fridge?",
+    "title": "Remind",
+    "pass": true,
+    "titles": [
+      "FAQs",
+      "20190805 Shun Hing College General Floor Rules",
+      "FAQs"
+    ],
+    "ms": 8.774999999999977
+  },
+  {
+    "question": "How do I book a room?",
+    "title": "Facilit",
+    "pass": true,
+    "titles": [
+      "Event Calendar",
+      "Facilities",
+      "General Facility Rules 20250916"
+    ],
+    "ms": 10.22120000000001
+  },
+  {
+    "question": "How much is accommodation in 2026?",
+    "title": "2026",
+    "pass": true,
+    "titles": [
+      "Admissions",
+      "Admission Results of Round I Admission 2026-27",
+      "Admission and Readmission"
+    ],
+    "ms": 9.241499999999974
+  },
+  {
+    "question": "How do I apply for readmission?",
+    "title": "Admission",
+    "pass": true,
+    "titles": [
+      "Admission and Readmission",
+      "Admission and Readmission",
+      "Admission and Readmission"
+    ],
+    "ms": 9.340599999999995
+  },
+  {
+    "question": "How do I contact the college office?",
+    "title": "Contact",
+    "pass": true,
+    "titles": [
+      "Contact Us",
+      "Important Check-in Notes",
+      "Organizational Structure"
+    ],
+    "ms": 9.266999999999996
+  },
+  {
+    "question": "How can I get an exchange scholarship?",
+    "title": "Scholarship",
+    "pass": true,
+    "titles": [
+      "Shun Hing Exchange Scholarships 25-26",
+      "Shun Hing Exchange Scholarships 24-25",
+      "Shun Hing Exchange Scholarships 22-23"
+    ],
+    "ms": 9.195799999999963
+  },
+  {
+    "question": "Tell me about Founding Master",
+    "title": "Founding Master",
+    "pass": true,
+    "titles": [
+      "Tutorial Team",
+      "Founding Master",
+      "Regulations Governing Residential Colleges"
+    ],
+    "ms": 8.871700000000033
+  },
+  {
+    "question": "Tell me about Facilities",
+    "title": "Facilities",
+    "pass": true,
+    "titles": [
+      "Facilities",
+      "Facilities",
+      "Facilities"
+    ],
+    "ms": 9.701300000000003
+  },
+  {
+    "question": "Tell me about Regulations Governing Residential Colleges",
+    "title": "Regulations Governing Residential Colleges",
+    "pass": true,
+    "titles": [
+      "Regulations Governing Residential Colleges",
+      "Regulations Governing Residential Colleges",
+      "Regulations Governing Residential Colleges"
+    ],
+    "ms": 9.278900000000021
+  },
+  {
+    "question": "Tell me about management rules of jcsviii 2021",
+    "title": "management rules of jcsviii 2021",
+    "pass": true,
+    "titles": [
+      "management rules of jcsviii 2021",
+      "management rules of jcsviii 2021",
+      "Management Rules of Jockey Club Student Village III"
+    ],
+    "ms": 10.215000000000032
+  },
+  {
+    "question": "Tell me about IMPORTANT REMINDERS from Shun Hing College",
+    "title": "IMPORTANT REMINDERS from Shun Hing College",
+    "pass": true,
+    "titles": [
+      "IMPORTANT REMINDERS from Shun Hing College",
+      "Documents for Residents",
+      "Warm Reminder for Residents"
+    ],
+    "ms": 8.344599999999957
+  },
+  {
+    "question": "Tell me about 20190805 Shun Hing College General Floor Rules",
+    "title": "20190805 Shun Hing College General Floor Rules",
+    "pass": true,
+    "titles": [
+      "20190805 Shun Hing College General Floor Rules",
+      "20190805 Shun Hing College General Floor Rules",
+      "20190805 Shun Hing College General Floor Rules"
+    ],
+    "ms": 10.325300000000027
+  },
+  {
+    "question": "Tell me about General Facility Rules 20250916",
+    "title": "General Facility Rules 20250916",
+    "pass": true,
+    "titles": [
+      "General Facility Rules 20250916",
+      "General Facility Rules 20250916",
+      "management rules of jcsviii 2021"
+    ],
+    "ms": 11.3433
+  },
+  {
+    "question": "Tell me about Event Management Team",
+    "title": "Event Management Team",
+    "pass": true,
+    "titles": [
+      "Event Management Team",
+      "Joint-college Dance Team",
+      "10th JCSV III International Music Festival"
+    ],
+    "ms": 8.688400000000001
+  },
+  {
+    "question": "Tell me about Photography Team",
+    "title": "Photography Team",
+    "pass": true,
+    "titles": [
+      "Photography Team",
+      "Sports Scholars 26-27",
+      "Sports Scholars 2026-27"
+    ],
+    "ms": 9.819200000000023
+  },
+  {
+    "question": "Tell me about Student Committee",
+    "title": "Student Committee",
+    "pass": true,
+    "titles": [
+      "Student Committee",
+      "Student Committee",
+      "Organizational Structure"
+    ],
+    "ms": 9.607899999999972
+  },
+  {
+    "question": "Tell me about Health and Wellness Team",
+    "title": "Health and Wellness Team",
+    "pass": true,
+    "titles": [
+      "Health and Wellness Team",
+      "Health and Wellness Team",
+      "Shun Hing Exchange Scholarships 22-23"
+    ],
+    "ms": 12.18610000000001
+  },
+  {
+    "question": "Tell me about Social Service Team",
+    "title": "Social Service Team",
+    "pass": true,
+    "titles": [
+      "Social Service Team",
+      "Event Organization Guide",
+      "Let’s connect!"
+    ],
+    "ms": 9.774400000000014
+  },
+  {
+    "question": "Tell me about Sustainability Team",
+    "title": "Sustainability Team",
+    "pass": true,
+    "titles": [
+      "Sustainability Team",
+      "Sports Scholars 26-27",
+      "Sports Scholars 2026-27"
+    ],
+    "ms": 8.952400000000011
+  },
+  {
+    "question": "Tell me about Discovery Club",
+    "title": "Discovery Club",
+    "pass": true,
+    "titles": [
+      "Discovery Club"
+    ],
+    "ms": 9.357399999999984
+  },
+  {
+    "question": "Tell me about Joint-college Dance Team",
+    "title": "Joint-college Dance Team",
+    "pass": true,
+    "titles": [
+      "Joint-college Dance Team",
+      "11th JCSV III International Music Festival",
+      "11th JCSV III International Music Festival"
+    ],
+    "ms": 8.395899999999983
+  },
+  {
+    "question": "Tell me about Art Jamming Club",
+    "title": "Art Jamming Club",
+    "pass": true,
+    "titles": [
+      "Art Jamming Club",
+      "The Hong Kong Jockey Club and The University of Hong Kong",
+      "Sports Scholars 2026-27"
+    ],
+    "ms": 9.251000000000033
+  },
+  {
+    "question": "Tell me about Cooking Club",
+    "title": "Cooking Club",
+    "pass": true,
+    "titles": [
+      "Cooking Club",
+      "FAQs",
+      "Warm Reminder for Residents"
+    ],
+    "ms": 9.2851
+  },
+  {
+    "question": "Tell me about Music Club",
+    "title": "Music Club",
+    "pass": true,
+    "titles": [
+      "Music Club",
+      "Music Club",
+      "10th JCSV III International Music Festival"
+    ],
+    "ms": 8.899699999999996
+  },
+  {
+    "question": "Tell me about Handicraft Club",
+    "title": "Handicraft Club",
+    "pass": true,
+    "titles": [
+      "Handicraft Club"
+    ],
+    "ms": 9.17610000000002
+  },
+  {
+    "question": "Tell me about Postgraduate Scholars Club",
+    "title": "Postgraduate Scholars Club",
+    "pass": true,
+    "titles": [
+      "Postgraduate Scholars Club",
+      "Admissions",
+      "Admissions"
+    ],
+    "ms": 8.900500000000022
+  },
+  {
+    "question": "Tell me about Dragon Boat",
+    "title": "Dragon Boat",
+    "pass": true,
+    "titles": [
+      "Dragon Boat",
+      "HKU Shun Hing College"
+    ],
+    "ms": 10.713399999999979
+  },
+  {
+    "question": "Tell me about Yoga Club",
+    "title": "Yoga Club",
+    "pass": true,
+    "titles": [
+      "Yoga Club",
+      "Event Calendar"
+    ],
+    "ms": 8.299899999999923
+  },
+  {
+    "question": "Tell me about Hiking and Camping Club",
+    "title": "Hiking and Camping Club",
+    "pass": true,
+    "titles": [
+      "Hiking and Camping Club",
+      "Sports Scholars 2026-27",
+      "Sports Scholars 26-27"
+    ],
+    "ms": 9.096200000000067
+  },
+  {
+    "question": "Tell me about Table Tennis Club",
+    "title": "Table Tennis Club",
+    "pass": true,
+    "titles": [
+      "Table Tennis Club",
+      "Sports Scholars 2022-23",
+      "Sports Scholars 2024-25"
+    ],
+    "ms": 9.308000000000106
+  },
+  {
+    "question": "Tell me about Ice-Skating Club",
+    "title": "Ice-Skating Club",
+    "pass": true,
+    "titles": [
+      "Ice-Skating Club"
+    ],
+    "ms": 8.486100000000079
+  },
+  {
+    "question": "Tell me about Volleyball Club",
+    "title": "Volleyball Club",
+    "pass": true,
+    "titles": [
+      "Volleyball Club"
+    ],
+    "ms": 8.305100000000039
+  },
+  {
+    "question": "Tell me about Football Club",
+    "title": "Football Club",
+    "pass": true,
+    "titles": [
+      "Football Club",
+      "Sports Scholars 2024-25",
+      "Sports Scholars 25-26"
+    ],
+    "ms": 9.355000000000018
+  },
+  {
+    "question": "Tell me about Swimming Club",
+    "title": "Swimming Club",
+    "pass": true,
+    "titles": [
+      "Swimming Club"
+    ],
+    "ms": 8.31370000000004
+  },
+  {
+    "question": "Tell me about Badminton Club",
+    "title": "Badminton Club",
+    "pass": true,
+    "titles": [
+      "Badminton Club",
+      "Sports Scholars 26-27",
+      "Sports Scholars 25-26"
+    ],
+    "ms": 7.977300000000014
+  },
+  {
+    "question": "Tell me about Basketball Club",
+    "title": "Basketball Club",
+    "pass": true,
+    "titles": [
+      "Basketball Club",
+      "Sports Scholars 2026-27",
+      "Sports Scholars 26-27"
+    ],
+    "ms": 9.98230000000001
+  },
+  {
+    "question": "Tell me about Frisbee Club",
+    "title": "Frisbee Club",
+    "pass": true,
+    "titles": [
+      "Frisbee Club"
+    ],
+    "ms": 9.836099999999988
+  },
+  {
+    "question": "Tell me about All-event-10",
+    "title": "All-event-10",
+    "pass": true,
+    "titles": [
+      "All-event-10",
+      "Event Calendar",
+      "Event Organization Guide"
+    ],
+    "ms": 9.136799999999994
+  },
+  {
+    "question": "Tell me about Event Calendar",
+    "title": "Event Calendar",
+    "pass": true,
+    "titles": [
+      "Event Calendar",
+      "Event Calendar",
+      "Event Organization Guide"
+    ],
+    "ms": 8.136300000000006
+  },
+  {
+    "question": "Tell me about Event Organization Guide",
+    "title": "Event Organization Guide",
+    "pass": true,
+    "titles": [
+      "Event Organization Guide",
+      "Event Organization Guide",
+      "Event Organization Guide"
+    ],
+    "ms": 11.10310000000004
+  },
+  {
+    "question": "Tell me about 10th JCSV III International Music Festival",
+    "title": "10th JCSV III International Music Festival",
+    "pass": true,
+    "titles": [
+      "10th JCSV III International Music Festival",
+      "10th JCSV III International Music Festival",
+      "10th JCSV III International Music Festival"
+    ],
+    "ms": 9.4371000000001
+  },
+  {
+    "question": "Tell me about 11th JCSV III International Music Festival",
+    "title": "11th JCSV III International Music Festival",
+    "pass": true,
+    "titles": [
+      "11th JCSV III International Music Festival",
+      "11th JCSV III International Music Festival",
+      "11th JCSV III International Music Festival"
+    ],
+    "ms": 8.699299999999994
+  },
+  {
+    "question": "Tell me about Sports Scholars 2026-27",
+    "title": "Sports Scholars 2026-27",
+    "pass": true,
+    "titles": [
+      "Sports Scholars 2026-27",
+      "Sports Scholars 2026-27",
+      "Sports Scholars 2026-27"
+    ],
+    "ms": 12.261199999999917
+  },
+  {
+    "question": "Tell me about Sports Scholars 2024-25",
+    "title": "Sports Scholars 2024-25",
+    "pass": true,
+    "titles": [
+      "Sports Scholars 2024-25",
+      "Sports Scholars 2024-25",
+      "Sports Scholars 25-26"
+    ],
+    "ms": 8.522600000000011
+  },
+  {
+    "question": "Tell me about Sports Scholars 2023-24",
+    "title": "Sports Scholars 2023-24",
+    "pass": true,
+    "titles": [
+      "Sports Scholars 2023-24",
+      "Sports Scholars 2023-24",
+      "Sports Scholars 2023-24"
+    ],
+    "ms": 8.172399999999925
+  },
+  {
+    "question": "Tell me about Sports Scholars 2022-23",
+    "title": "Sports Scholars 2022-23",
+    "pass": true,
+    "titles": [
+      "Sports Scholars 2022-23",
+      "Sports Scholars 2022-23",
+      "Sports Scholars 2022-23"
+    ],
+    "ms": 9.524099999999976
+  },
+  {
+    "question": "Tell me about Shun Hing Exchange Scholarships 25-26",
+    "title": "Shun Hing Exchange Scholarships 25-26",
+    "pass": true,
+    "titles": [
+      "Shun Hing Exchange Scholarships 25-26",
+      "Shun Hing Exchange Scholarships 25-26",
+      "Shun Hing Exchange Scholarships 25-26"
+    ],
+    "ms": 11.022600000000011
+  },
+  {
+    "question": "Tell me about Shun Hing Exchange Scholarships 24-25",
+    "title": "Shun Hing Exchange Scholarships 24-25",
+    "pass": true,
+    "titles": [
+      "Shun Hing Exchange Scholarships 24-25",
+      "Shun Hing Exchange Scholarships 24-25",
+      "Shun Hing Exchange Scholarships 24-25"
+    ],
+    "ms": 11.076400000000035
+  },
+  {
+    "question": "Tell me about Shun Hing Exchange Scholarships 23-24",
+    "title": "Shun Hing Exchange Scholarships 23-24",
+    "pass": true,
+    "titles": [
+      "Shun Hing Exchange Scholarships 23-24",
+      "Shun Hing Exchange Scholarships 23-24",
+      "Shun Hing Exchange Scholarships 22-23"
+    ],
+    "ms": 10.415200000000027
+  },
+  {
+    "question": "Tell me about Shun Hing Exchange Scholarships 22-23",
+    "title": "Shun Hing Exchange Scholarships 22-23",
+    "pass": true,
+    "titles": [
+      "Shun Hing Exchange Scholarships 22-23",
+      "Shun Hing Exchange Scholarships 22-23",
+      "Shun Hing Exchange Scholarships 22-23"
+    ],
+    "ms": 10.10820000000001
+  },
+  {
+    "question": "Tell me about Admission and Readmission",
+    "title": "Admission and Readmission",
+    "pass": true,
+    "titles": [
+      "Admission and Readmission",
+      "Admission and Readmission",
+      "Admission and Readmission"
+    ],
+    "ms": 8.767200000000003
+  },
+  {
+    "question": "Tell me about college charges 2024 25 jcsviii",
+    "title": "college charges 2024 25 jcsviii",
+    "pass": true,
+    "titles": [
+      "college charges 2024 25 jcsviii",
+      "college charges 2024 25 jcsviii",
+      "Sports Scholars 2024-25"
+    ],
+    "ms": 8.152600000000007
+  },
+  {
+    "question": "Tell me about Let’s connect!",
+    "title": "Let’s connect!",
+    "pass": true,
+    "titles": [
+      "Let’s connect!",
+      "Let’s connect!",
+      "Let’s connect!"
+    ],
+    "ms": 11.830699999999979
+  },
+  {
+    "question": "Tell me about Contact Us",
+    "title": "Contact Us",
+    "pass": true,
+    "titles": [
+      "Contact Us",
+      "Contact Us",
+      "Table Tennis Club"
+    ],
+    "ms": 10.572999999999979
+  },
+  {
+    "question": "Tell me about PA",
+    "title": "PA",
+    "pass": true,
+    "titles": [
+      "PA",
+      "PA",
+      "PA"
+    ],
+    "ms": 9.071699999999964
+  },
+  {
+    "question": "Tell me about HKU 4F AV System Manual 20251012",
+    "title": "HKU 4F AV System Manual 20251012",
+    "pass": true,
+    "titles": [
+      "HKU 4F AV System Manual 20251012",
+      "HKU 4F AV System Manual 20251012",
+      "HKU 4F AV System Manual 20251012"
+    ],
+    "ms": 12.532500000000027
+  },
+  {
+    "question": "Tell me about Tutorial Team",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.28149999999993724
+  },
+  {
+    "question": "Tell me about Residential Student Adviser Team",
+    "title": "Residential Student Adviser Team",
+    "pass": true,
+    "titles": [
+      "Residential Student Adviser Team",
+      "Organizational Structure",
+      "Football Club"
+    ],
+    "ms": 8.04989999999998
+  },
+  {
+    "question": "Tell me about Running Club",
+    "title": "Running Club",
+    "pass": true,
+    "titles": [
+      "Running Club"
+    ],
+    "ms": 7.672400000000039
+  },
+  {
+    "question": "Tell me about Sports Scholars 25-26",
+    "title": "Sports Scholars 25-26",
+    "pass": true,
+    "titles": [
+      "Sports Scholars 25-26",
+      "Sports Scholars 25-26",
+      "Sports Scholars 25-26"
+    ],
+    "ms": 8.800799999999981
+  },
+  {
+    "question": "Tell me about Sports Scholars 26-27",
+    "title": "Sports Scholars 26-27",
+    "pass": true,
+    "titles": [
+      "Sports Scholars 26-27",
+      "Sports Scholars 26-27",
+      "Sports Scholars 26-27"
+    ],
+    "ms": 8.148900000000026
+  },
+  {
+    "question": "Tell me about Student Life",
+    "title": "Student Life",
+    "pass": true,
+    "titles": [
+      "Student Life"
+    ],
+    "ms": 7.93610000000001
+  },
+  {
+    "question": "Tell me about Tech Club",
+    "title": "Tech Club",
+    "pass": true,
+    "titles": [
+      "Tech Club"
+    ],
+    "ms": 7.857400000000098
+  },
+  {
+    "question": "Who is the tutor for 5/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.2479999999999336
+  },
+  {
+    "question": "Who is the tutor for 6/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.04529999999999745
+  },
+  {
+    "question": "Who is the tutor for 7/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.038600000000087675
+  },
+  {
+    "question": "Who is the tutor for 8/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.07429999999999382
+  },
+  {
+    "question": "Who is the tutor for 9/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.038399999999910506
+  },
+  {
+    "question": "Who is the tutor for 10/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.039099999999962165
+  },
+  {
+    "question": "Who is the tutor for 11/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03710000000000946
+  },
+  {
+    "question": "Who is the tutor for 12/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03779999999994743
+  },
+  {
+    "question": "Who is the tutor for 13/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.053599999999960346
+  },
+  {
+    "question": "Who is the tutor for 14/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.038000000000010914
+  },
+  {
+    "question": "Who is the tutor for 15/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03660000000002128
+  },
+  {
+    "question": "Who is the tutor for 16/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03679999999997108
+  },
+  {
+    "question": "Who is the tutor for 17/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03809999999998581
+  },
+  {
+    "question": "Who is the tutor for 18/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03669999999999618
+  },
+  {
+    "question": "Who is the tutor for 19/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.0362999999999829
+  },
+  {
+    "question": "Who is the tutor for 20/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.036100000000033106
+  },
+  {
+    "question": "Who is the tutor for 21/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.06409999999993943
+  },
+  {
+    "question": "Who is the tutor for 22/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.036400000000071486
+  },
+  {
+    "question": "Who is the tutor for 23/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03719999999998436
+  },
+  {
+    "question": "Who is the tutor for 24/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03779999999994743
+  },
+  {
+    "question": "Who is the tutor for 25/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.04229999999995471
+  },
+  {
+    "question": "Who is the tutor for 26/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.04570000000001073
+  },
+  {
+    "question": "Who is the tutor for 27/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03809999999998581
+  },
+  {
+    "question": "Who is the tutor for 28/F?",
+    "title": "Tutorial Team",
+    "pass": true,
+    "titles": [
+      "Tutorial Team"
+    ],
+    "ms": 0.03770000000008622
+  }
+]

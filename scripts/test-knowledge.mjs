@@ -4,6 +4,32 @@ import {readFileSync} from 'node:fs';
 import {retrieve,tokens} from '../lib/retrieval.ts';
 import {directoryAnswer,staffRecords} from '../lib/directory.ts';
 const docs=JSON.parse(readFileSync(new URL('../data/knowledge.json',import.meta.url),'utf8'));
+test('general scholarships question includes latest sports and exchange programmes',()=>{
+ const sources=retrieve('What scholarships does SHC offer?',docs);
+ assert.ok(sources.some(s=>/^Sports Scholars (?:20)?26-27$/.test(s.title)));
+ assert.ok(sources.some(s=>s.title==='Shun Hing Exchange Scholarships 25-26'));
+ const notice={...docs[0],id:'scholarship-update',organization:'Uploaded',title:'Supplementary scholarship notice',text:'The example scholarship programme has updated eligibility requirements. Consult this notice alongside the official college scholarship pages.'};
+ assert.ok(retrieve('What scholarships does SHC offer?',[...docs,notice]).some(s=>s.documentId==='scholarship-update'));
+});
+for(const question of ['What is JCSV3?','What is JCSVIII?','Tell me about JCSV 3'])test(`village alias ${question}`,()=>{
+ assert.ok(retrieve(question,docs).some(s=>s.url==='https://jockeyv3.hku.hk/'));
+});
+for(const [question,title] of [['Who is the warden of SHC?','Tutorial Team'],['Where can I exercise?','Facilities'],['How do I connect to Wi-Fi?','FAQs']])test(`paraphrase ${question}`,()=>{
+ assert.ok(retrieve(question,docs).some(s=>s.title===title));
+});
+test('staff directory does not pretend to answer unlisted personal facts',()=>{
+ for(const q of ['What is the age of the SHC master?','Who is the SHC master married to?','What is the SHC master favourite food?'])assert.equal(directoryAnswer(q,docs),null);
+});
+test('combined master and floor tutor question answers both parts',()=>{
+ const answer=directoryAnswer('Who is the master of SHC and the tutor for 18/F?',docs).answer;
+ assert.ok(answer.includes('David S. Lee'));assert.ok(answer.includes('Qiqi Chen'));
+});
+for(const question of ['what do resident student ambassadors do','What do RSAs do?','How can residential student advisors help me?'])test(`RSA wording: ${question}`,()=>{
+ assert.equal(retrieve(question,docs)[0].title,'Residential Student Adviser Team');
+});
+for(const doc of docs.filter(d=>d.organization==='SHC'&&/team|club/i.test(d.title)))test(`team coverage: ${doc.title}`,()=>{
+ assert.ok(retrieve(`What does ${doc.title} do?`,docs).some(c=>c.documentId===doc.id));
+});
 test('floor numbers including single digits survive retrieval',()=>{
  assert.ok(tokens('Who is my 5th floor tutor?').includes('5'));
  assert.ok(retrieve('Who is the 5/F tutor?',docs)[0].text.includes('Dr. Nicole Tsang'));

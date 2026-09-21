@@ -1,3 +1,4 @@
+import {readJson,InputError} from '../../../../lib/request-json';
 import { env } from 'cloudflare:workers';
 import { database } from '../../../../lib/knowledge';
 import { admin,sameOrigin } from '../../../../lib/server';
@@ -13,7 +14,7 @@ export async function PUT(request:Request,context:{params:Promise<{id:string}>})
  if(!sameOrigin(request)||!await admin(request))return Response.json({error:'Administrator sign-in required.'},{status:401});
  try{
   if(Number(request.headers.get('content-length')||0)>1600000)return Response.json({error:'Document is too large.'},{status:413});
-  const body=await request.json() as {title?:unknown;text?:unknown};
+  const body=await readJson(request,1600000) as {title?:unknown;text?:unknown};
   if(typeof body.title!=='string'||!body.title.trim()||body.title.length>160||typeof body.text!=='string'||body.text.trim().length<80||body.text.length>250000)return Response.json({error:'Enter a title (up to 160 characters) and readable text (80–250,000 characters).'},{status:400});
   const {id}=await context.params;const doc=await database().prepare('SELECT filename FROM documents WHERE id=?').bind(id).first<{filename:string}>();
   if(!doc)return Response.json({error:'Document not found.'},{status:404});
@@ -27,7 +28,7 @@ export async function PUT(request:Request,context:{params:Promise<{id:string}>})
   try{await database().prepare('UPDATE documents SET title=?,text=?,filename=?,created_at=?,sha=?,bytes=? WHERE id=?').bind(body.title.trim(),body.text,doc.filename.replace(/\.[^.]+$/,'')+'.txt',new Date().toISOString(),sha,bytes.length,id).run();}
   catch(error){await env.BUCKET.put(id,original,{httpMetadata:previous.httpMetadata});throw error;}
   return Response.json({ok:true,id},{headers:{'Cache-Control':'no-store'}});
- }catch{return Response.json({error:'Could not save your changes.'},{status:503});}
+ }catch(error){if(error instanceof InputError)return Response.json({error:error.message},{status:error.status});return Response.json({error:'Could not save your changes.'},{status:503});}
 }
 export async function DELETE(request:Request,context:{params:Promise<{id:string}>}){
  if(!sameOrigin(request)||!await admin(request))return Response.json({error:'Administrator access required.'},{status:401});

@@ -1,0 +1,146 @@
+{
+  "groups": [
+    {
+      "category": "Community Teams",
+      "entries": [
+        {
+          "name": "Event Management Team",
+          "url": "https://shunhingcollege.hku.hk/emt/"
+        },
+        {
+          "name": "Media Team",
+          "url": "https://shunhingcollege.hku.hk/photography/"
+        },
+        {
+          "name": "Student Committee",
+          "url": "https://shunhingcollege.hku.hk/student-committee-2/"
+        },
+        {
+          "name": "Residential Student Adviser Team",
+          "url": "https://shunhingcollege.hku.hk/residential-student-adviser-team/"
+        },
+        {
+          "name": "Health and Wellness Team",
+          "url": "https://shunhingcollege.hku.hk/health-and-wellness-team/"
+        },
+        {
+          "name": "Social Service Team",
+          "url": "https://shunhingcollege.hku.hk/social-service-team/"
+        },
+        {
+          "name": "Sustainability Team",
+          "url": "https://shunhingcollege.hku.hk/sustainability-team/"
+        }
+      ]
+    },
+    {
+      "category": "Art and Culture",
+      "entries": [
+        {
+          "name": "Schola Cantorum",
+          "url": "https://scholacantorumhk.weebly.com/"
+        },
+        {
+          "name": "Discovery Club",
+          "url": "https://shunhingcollege.hku.hk/exhibition-club/"
+        },
+        {
+          "name": "Joint-college Dance Team",
+          "url": "https://shunhingcollege.hku.hk/dance-team/"
+        },
+        {
+          "name": "Art Jamming Club",
+          "url": "https://shunhingcollege.hku.hk/art-jamming-club/"
+        },
+        {
+          "name": "Cooking Club",
+          "url": "https://shunhingcollege.hku.hk/cooking-club/"
+        },
+        {
+          "name": "Music Club",
+          "url": "https://shunhingcollege.hku.hk/music-club/"
+        },
+        {
+          "name": "Handicraft Club",
+          "url": "https://shunhingcollege.hku.hk/handicraft-club/"
+        },
+        {
+          "name": "Chess Club",
+          "url": "https://shunhingcollege.hku.hk/chess-club/"
+        },
+        {
+          "name": "Drama Club",
+          "url": "https://shunhingcollege.hku.hk/drama-club/"
+        }
+      ]
+    },
+    {
+      "category": "Academic Knowledge Exchange",
+      "entries": [
+        {
+          "name": "Postgraduate Scholars Club",
+          "url": "https://shunhingcollege.hku.hk/postgraduate-scholars-club/"
+        },
+        {
+          "name": "Tech Club",
+          "url": "https://shunhingcollege.hku.hk/tech-club/"
+        }
+      ]
+    },
+    {
+      "category": "Sports Clubs",
+      "entries": [
+        {
+          "name": "Dragon Boat",
+          "url": "https://shunhingcollege.hku.hk/dragon-boat/"
+        },
+        {
+          "name": "Yoga Club",
+          "url": "https://shunhingcollege.hku.hk/yoga-club/"
+        },
+        {
+          "name": "Hiking and Camping Club",
+          "url": "https://shunhingcollege.hku.hk/hiking-and-camping-club/"
+        },
+        {
+          "name": "Table Tennis Club",
+          "url": "https://shunhingcollege.hku.hk/table-tennis-club/"
+        },
+        {
+          "name": "Ice-Skating Club",
+          "url": "https://shunhingcollege.hku.hk/ice-skating-club/"
+        },
+        {
+          "name": "Volleyball Club",
+          "url": "https://shunhingcollege.hku.hk/volleyball-club/"
+        },
+        {
+          "name": "Football Club",
+          "url": "https://shunhingcollege.hku.hk/football-club/"
+        },
+        {
+          "name": "Swimming Club",
+          "url": "https://shunhingcollege.hku.hk/swimming-club/"
+        },
+        {
+          "name": "Badminton Club",
+          "url": "https://shunhingcollege.hku.hk/badminton-club/"
+        },
+        {
+          "name": "Basketball Club",
+          "url": "https://shunhingcollege.hku.hk/basketball-club/"
+        },
+        {
+          "name": "Running Club",
+          "url": "https://shunhingcollege.hku.hk/running-club/"
+        },
+        {
+          "name": "Frisbee Club",
+          "url": "https://shunhingcollege.hku.hk/frisbee-club/"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "retrievedAt": "2026-09-21"
+}

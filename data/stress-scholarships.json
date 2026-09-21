@@ -1,0 +1,35 @@
+{
+  "question": "What scholarships does SHC offer?",
+  "status": 200,
+  "ms": 3986,
+  "answer": "Based on the available sources, Shun Hing College (SHC) mentions the following scholarships:\n\n- **Shun Hing College Residential Scholarship for Sports Scholars**: Awarded since 2019 to undergraduate students admitted through the Sports Scholarship Scheme administered by the Centre for Sports and Exercise (CSE) [1]. The 2026-27 recipients listed include Darren Chu Shiu Wai (Shuttlecock, Year 5 BDS) and Ryan Chak (Basketball, Year 3 BDS) [1].\n- **Shun Hing College Exchange Scholarship**: Awarded to second or third-year undergraduate students undertaking academic exchange for a year at universities in Japan under the HKU Worldwide Exchange Scheme or faculty-level exchange programmes [2].\n\nPlease note these are the scholarships explicitly referenced in the current sources; there may be other SHC scholarships not shown here. For a complete and current list, check the SHC website or contact the college office directly.",
+  "sources": [
+    {
+      "id": "0ce83ccc600c13c0-0",
+      "documentId": "0ce83ccc600c13c0",
+      "title": "Sports Scholars 2026-27",
+      "url": "https://shunhingcollege.hku.hk/sports-scholars-2025-26/",
+      "organization": "SHC",
+      "category": "Admissions & fees",
+      "kind": "Web page",
+      "retrievedAt": "2026-09-19",
+      "updatedLabel": null,
+      "historical": false,
+      "text": "Shun Hing Sports Scholars 2026-27\nThe\nShun Hing College Residential Scholarship for Sports Scholars\nhas been awarded since 2019 to undergraduate students who were admitted through the Sports Scholarship Scheme administered by the Centre for Sports and Exercise (CSE).\nDarren Chu Shiu Wai\n-Shuttlecock\n(\n足毽\n)\n–\nYear 5 Bachelor of Dental Surgery (BDS)\nMember of Hong Kong Youth National Shuttlecock Team\nFormer Member of Hong Kong National Shuttlecock Team\n2026 Selected to represent Hong Kong National team in the 2026 Shuttlecock World Cup (Hong Kong station)\n2024 Asian Youth Shuttlecock Championship (Men’s Doubles)\n(Champion)\n2024 Asian Youth Shuttlecock Championship (Men’s Teams) (1 st runner\nup)\n2023 Asian Youth Shuttlecock Championships (Men’s Doubles) (2 nd\nrunner up)\n2023 Asian Youth Shuttlecock Championships (Men’s Teams) (2 nd\nrunner up)\n2021 National Shuttlecock Championships cum National Junior\nShuttlecock Championships (Youth Group 1st Division, Men's\nFreestyle, 1st runner up)\nShun Hing Sports Scholar since 2023\nRyan Chak\n-Basketball-\nYear 3 Bachelor of Dental Surgery (BDS)\nCaptain of HKU Basketball Team\nMember of Hong Kong U22 Men’s Basketball Team\nEx Captain of U18, U16 Hong Kong Basketball Team\nEx-captain of HKU Men’s Badmin\n2025 The 15th National Games of the People's Republic of China, Men's U22 Basketball Competition (9th)\n2025 World University Basketball Series (WUBS) (Merit)\n2025 Asian University Basketball League (AUBL) (Merit)\n2025-2026 1st Runner Up of the USFHK Basketball Tournament\n2024-2025 Champion of the USFHK basketball tournament\n2024-2025 Top 8th of the 7th Asian University 3x3 Basketball Championship"
+    },
+    {
+      "id": "d2c016afe3bafb1b-0",
+      "documentId": "d2c016afe3bafb1b",
+      "title": "Shun Hing Exchange Scholarships 25-26",
+      "url": "https://shunhingcollege.hku.hk/shun-hing-exchange-scholarships-25-26/",
+      "organization": "SHC",
+      "category": "Admissions & fees",
+      "kind": "Web page",
+      "retrievedAt": "2026-09-21",
+      "updatedLabel": null,
+      "historical": false,
+      "text": "Shun Hing Exchange Scholarships 2025-26\nThe\nShun Hing College Exchange Scholarship\nis awarded to second or third-year undergraduate students who will be partaking in academic exchange for a year to universities in Japan under the HKU Worldwide Exchange Scheme or faculty-level exchange programmes.\nMa Cheuk Yin\n-Exchange at University of Tokyo -\nMy name is Jiwoong Choi, a humble Korean student in the Bachelor of Arts program at the University of Hong Kong. Currently I’m spending my 3\nrd\nyear as an exchange student at the University of Tokyo. Before I explain a bit more about my life in Japan, I would first like to express my deepest gratitude for having received the Shun Hing Scholarships for my exchange program. It’ll be of great help in pursuing countless opportunities during my time in Japan.\nAs an Arts student, my major is French but I also have an additional minor in the Japanese language. One of the most important factors in acquiring a language is how real of an experience can you gain during the process. To fully embrace a language, you must first understand the culture of the people that use it. The best way to do so is obviously living amongst them for a good amount of time, which is exactly what my exchange program in UTokyo is granting me of.\nI’m looking forward to what I’ll come across during my stay in one of the grandest metropolises in the world, and I’ve no doubt that it’s going to be an enriching experience that I would treasure for a lifetime.\nLau Pak Kiu Ambrose\n- Exchange at Rikkyo University-"
+    }
+  ],
+  "mode": "answer"
+}

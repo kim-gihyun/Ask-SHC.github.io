@@ -52,3 +52,32 @@ This verifies the implementation and representative flows, not the factual accur
 - That live answer recovered from Qwen 429 and Gemma 429 using Ling Flash VL (200). The disposable test source was removed afterward.
 - Browser: student navigation contains no library/management controls; a complete master/tutor/fellow answer was displayed with citations. The separate admin URL showed a password screen without document metadata. No errors were recorded on the admin login page.
 - These checks verify representative retrieval and access boundaries, not universal factual accuracy. Uploaded content is intended to inform public student answers even though library management and full downloads are private.
+
+## Conversation memory verification (2026-09-20)
+- Fixed history being discarded for short corrections such as "sc".
+- Added shared client/server history validation and size limits, plus contextual retrieval for chained follow-ups.
+- Exact live API regression: prior "what is the difference between emt and sf", followed by "sc", returned HTTP 200 and a sourced EMT versus Student Committee comparison.
+- All 66 tests pass, including six new context, retrieval, reset, validation and Unicode request-size regressions. TypeScript check and production build pass.
+- Local development server available at http://localhost:5173/. Conversation history is temporary, not persistent across reloads.
+
+## Persistent conversation verification (2026-09-20)
+- Browser tested: submitted a question, reloaded, and verified the question, answer and citations restored.
+- Browser tested: New conversation retained the previous chat in Saved conversations; selecting it restored its full transcript.
+- Visually inspected the HKU crest and faint SHC watermark at the current mobile-width viewport.
+- All 68 automated tests pass, including archive validation and relevant older-turn recall. TypeScript and production build pass.
+
+## Student UI and admin trial chat (2026-09-20)
+Student conversations hide model attempts and provider labels, including previously saved answers. Model diagnostics require an authenticated admin session and the test-chat request header; anonymous diagnostic requests return 401. The /admin workspace offers Open test chat alongside material management. Test chats use the same retrieval and model fallback pipeline and a separate browser archive. Source excerpts remain inspectable.
+
+Polished the saved-conversation picker, increased watermark opacity, added a subtle composer halo, and reduced home-screen copy. Live API checks confirmed anonymous diagnostic denial, student responses without model details, and authenticated responses with attempt records. Browser inspection confirmed the styled picker and hidden diagnostics on saved student answers. All 68 tests, TypeScript checking and production build passed.
+
+## Coverage and chat controls (2026-09-21)
+- Added per-chat deletion with Undo in the saved conversation picker; verified deleting and restoring a chat through the browser.
+- SHC watermark opacity is 60%; answer text and source chips retain pale backing for readability.
+- Refreshed all previously collected sources and all eligible official homepage navigation links. 81 URLs checked without failures; 77 distinct source documents retained. Audit: data/coverage-audit.json. Re-run with scripts/audit-coverage.py.
+- The ambassador question was a terminology mismatch: the official source says Residential Student Advisers (RSA). Added matching for RSA, ambassadors, and advisor spellings, with explicit official-name clarification in answers. Live exact question returned HTTP 200 with the RSA duties and source citation.
+- Added 29 regression cases: three RSA wording variants and retrieval checks for all 26 SHC team/club pages. All 97 tests and production build pass.
+- Coverage scope is explicit: this audit covers existing documents and homepage-linked official pages/PDFs. It does not certify every historical archive page, externally hosted resource, or information embedded solely in images/video. Missing evidence must remain explicit rather than fabricated.
+
+## Broad review (2026-09-21)
+See REVIEW.md for the full scope and limits. Watermark set to 40%; fixed combined master/tutor lookup, added Stop generation, hardened JSON byte limits and saved metadata, reduced student citations to used sources, improved Markdown formatting, mobile keyboard navigation, focus styles, touch targets and admin layout. All 107 tests passed. Live bad-request/auth checks and a cited answer succeeded; desktop/mobile checks found no horizontal overflow. Targeted lint: no errors, two logo optimization advisories.
